@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        
+        <title> Calculadora</title>
+         <script type="text/javascript" src="calculadora.js"></script>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        
+         <style>
+            
+            
+            #menu{
+                
+                
+            }
+            
+            #menu ul{
+                
+                margin: 0;
+                background-color: black;
+                list-style: none;
+                
+            }
+            
+            #menu ul li{
+                
+                display: inline;
+                
+            }
+            
+            #menu ul li a{
+                
+                padding: 10px 10px;
+                display: inline-block;
+                color: white;
+                text-decoration: none;
+                
+            }
+            
+            #menu ul li a:hover{
+                color: blue;
+            }
+                   
+        </style>
+        
+    </head>
+    
+    <body>
+        
+        <div id = "menu">
+           
+           <ul>
+               <li><a href = "HomePage.html">Inicio</a></li>
+               <li><a href = "calculadora.html">Calculadora</a></li>
+               <li><a href = "conversor_bin_dec.html">Conversor binário</a></li>
+               <li><a href = "Random_user.html">Gerador de usuário</a></li>
+           
+           
+           </ul>
+        
+        
+        </div>
+        
+        <h1>Calculadora Simples</h1>
+        
+        <form name="calc">
+            
+            <input type="text" name="visor" /> <br /><BR />
+            <input type="button" value="7" onclick="botao(value);"/>
+            <input type="button" value="8" onclick="botao(value);"/>
+            <input type="button" value="9" onclick="botao(value);"/>
+            <input type="button" value="/" onclick="botao(value);"/>
+            <BR /><BR />
+            <input type="button" value="4" onclick="botao(value);"/>
+            <input type="button" value="5" onclick="botao(value);"/>
+            <input type="button" value="6" onclick="botao(value);"/>
+            <input type="button" value="*" onclick="botao(value);"/>
+            <BR /><BR />
+            <input type="button" value="1" onclick="botao(value);"/>
+            <input type="button" value="2" onclick="botao(value);"/>
+            <input type="button" value="3" onclick="botao(value);"/>
+            <input type="button" value="-" onclick="botao(value);"/>
+            <BR /><BR />
+            <input type="button" value="0" onclick="botao(value);"/>
+            <input type="button" value="=" onclick="calculo();"/>
+            <input type="button" value="C" onclick="reset();"/>
+            <input type="button" value="+" onclick="botao(value);"/>
+            
+    
+    
+    
+        
+        </form>
+        
+    </body>
+
+</html>

@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Gerador de usuario</title>
+      
+      <style>
+            
+            
+            #menu{
+                
+                
+            }
+            
+            #menu ul{
+                
+                margin: 0;
+                background-color: black;
+                list-style: none;
+                
+            }
+            
+            #menu ul li{
+                
+                display: inline;
+                
+            }
+            
+            #menu ul li a{
+                
+                padding: 10px 10px;
+                display: inline-block;
+                color: white;
+                text-decoration: none;
+                
+            }
+            
+            #menu ul li a:hover{
+                color: blue;
+            }
+                   
+        </style>
+  </head>
+  <body>
+      
+      <div id = "menu">
+           
+           <ul>
+               <li><a href = "HomePage.html">Inicio</a></li>
+               <li><a href = "calculadora.html">Calculadora</a></li>
+               <li><a href = "conversor_bin_dec.html">Conversor binário</a></li>
+               <li><a href = "Random_user.html">Gerador de usuário</a></li>
+           
+           
+           </ul>
+        
+        
+        </div>
+    <div class="container my-5 text-center">
+        
+        <button class="btn btn-danger w-100" onclick="trazer()">Gerar usuário</button>
+        <div class="mt-5" id="conteudo">
+            
+            
+        
+        
+        </div>
+        
+        <script>
+            
+            var conteudo = document.querySelector('#conteudo')
+           
+            function trazer(){
+                
+               fetch('https://randomuser.me/api/')
+                .then(res => res.json())
+                .then(data =>{
+                   
+                   console.log(data.results['0'])
+                   conteudo.innerHTML = `
+                   <img src="${data.results['0'].picture.large}" width="100px" class="img-fluid rounded-circle">
+                   <p> Nome: ${data.results['0'].name.first} ${data.results['0'].name.last}</p>
+                   <p> Idade: ${data.results['0'].dob.age}</p>
+                   <p> E-mail: ${data.results['0'].email}</p>
+                   <p> Celular: ${data.results['0'].cell}</p>
+                   <p> Rua: ${data.results['0'].location.street}</p>
+                   <p> Estado: ${data.results['0'].location.state}</p>
+                   <p> Cidade: ${data.results['0'].location.city}</p>`
+               })
+              
+            }
+        
+        </script>
+        
+    </div>   
+  </body>
+</html>
